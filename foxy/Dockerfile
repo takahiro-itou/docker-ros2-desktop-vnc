@@ -14,4 +14,5 @@ COPY ./ros-foxy-desktop.sh /ros-foxy-desktop.sh
 RUN mkdir -p /tmp/ros_setup_scripts_ubuntu && mv /ros-foxy-desktop.sh /tmp/ros_setup_scripts_ubuntu/ && \
     gosu ubuntu /tmp/ros_setup_scripts_ubuntu/ros-foxy-desktop.sh && \
     rm -rf /var/lib/apt/lists/*
+COPY etc/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ENV USER ubuntu
